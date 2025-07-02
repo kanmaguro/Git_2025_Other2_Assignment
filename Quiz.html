@@ -41,37 +41,48 @@
             transition: background-color 0.3s;
         }
 
+        .choice.selected {
+            background-color: #90caf9; /* 選択中の色 */
+        }
+
         .choice:hover {
             background-color: #d0d0d0;
         }
 
-        .next-button {
+        .submit-button {
             margin-top: 20px;
             padding: 10px 20px;
             font-size: 1em;
-            background-color: #4caf50;
+            background-color: #1976d2;
             color: white;
             border: none;
             border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-button:disabled {
+            background-color: #ccc;
             cursor: not-allowed;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 1.1em;
         }
     </style>
 </head>
 <body>
     <div class="quiz-container">
         <div class="question" id="question">
-            ここにクイズの問題文が表示されます。
+            <!-- 問題文が入ります -->
         </div>
         <div class="choices" id="choices">
-            <div class="choice">選択肢 1</div>
-            <div class="choice">選択肢 2</div>
-            <div class="choice">選択肢 3</div>
-            <div class="choice">選択肢 4</div>
+            <!-- 選択肢が入ります -->
         </div>
-        <button class="next-button" id="next-button" disabled>次へ</button>
+        <button class="submit-button" id="submit-button" disabled>回答</button>
+        <div class="result" id="result"></div>
     </div>
 
     <script src="Quiz.js"></script>
 </body>
 </html>
-
